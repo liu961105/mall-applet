@@ -9,6 +9,7 @@ Page({
   data: {
     goodsObj:{}
   },
+  GoodsInfo:{},
 
   /**
    * 生命周期函数--监听页面加载
@@ -19,8 +20,23 @@ Page({
   },
   async getGoodsDetail(goods_id){
     const goodsObj =await request({url:"/goods/detail",data:{goods_id}});
+    this.GoodsInfo = goodsObj;
     this.setData({
-      goodsObj
+      goodsObj:{
+        goods_name:goodsObj.goods_name,
+        goods_price:goodsObj.goods_price,
+        goods_introduce:goodsObj.goods_introduce.replace(/\.webp/g,'.jpg'),
+        pics:goodsObj.pics
+      }
     })
+  },
+  handlePrevewImage(e){
+    const urls = this.GoodsInfo.pics.map(v=>v.pics_mid);
+    const current = e.currentTarget.dataset.url;
+    wx.previewImage({
+      current,
+      urls
+    });
+      
   }
 })
