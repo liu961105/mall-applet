@@ -51,11 +51,19 @@
 <view class="iconfont iconicon3"></view>
 <view class="order_name">退款/退货</view>
 </navigator>
-  
-
-
 </view>
-
+</view>
+<view class="address_wrap">地址收货管理</view>
+<!--应用信息相关-->
+<view class="app_info_wrap">
+<view class="app_info_item app_info_contact">
+<text>联系客服</text>
+<text>400-618-4000</text>
+</view>
+<view class="app_info_item">意见反馈</view>
+<view class="app_info_item">关于我们</view>
+</view>
+<view class="recomment_wrap">把应用推荐给其他人
 </view>
 </view>
 </view>
